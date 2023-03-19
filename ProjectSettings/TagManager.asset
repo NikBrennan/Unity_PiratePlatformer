@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sky
+    uniqueID: 3841941141
+    locked: 0
+  - name: Far Cloud
+    uniqueID: 2571091721
+    locked: 0
+  - name: Scrolling Cloud
+    uniqueID: 631509325
+    locked: 0
+  - name: Water
+    uniqueID: 1690011373
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1737164187
+    locked: 0
+  - name: Player
+    uniqueID: 3314473315
+    locked: 0
