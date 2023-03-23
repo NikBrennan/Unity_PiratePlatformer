@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             animator.SetBool("IsJumping", true);
 		}
-        if (characterController.isFalling())
+        if (characterController.isFalling() && !characterController.isAttacking())
         {
             Debug.Log("Falling");
             animator.SetBool("IsFalling", true);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Animator animator;
+    public CharacterController2D characterController;
     public int attackState;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
 			animator.SetBool("IsJumping", false);
 			animator.SetBool("IsFalling", false);
 			animator.SetBool("IsAttacking", true);
-            
+            characterController.updateAttacking(true);
 		}
     }
 
@@ -30,5 +31,6 @@ public class PlayerAttack : MonoBehaviour
         attackState = attackState++ >= 3 ? attackState = 1 : attackState++;
         animator.SetInteger("AttackStyle", attackState);
 		animator.SetBool("IsAttacking", false);
-    }
+		characterController.updateAttacking(false);
+	}
 }
