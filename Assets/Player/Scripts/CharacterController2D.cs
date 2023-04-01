@@ -48,6 +48,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
+				Debug.Log("Grounded");
 				m_Grounded = true;
 				if (!wasGrounded)
 				{
@@ -96,6 +97,7 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			Debug.Log("Jump");
 			// Add a vertical force to the player.
 			m_Grounded = true;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
