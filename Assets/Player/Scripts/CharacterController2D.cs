@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	[SerializeField] public int PlayerHealth = 100;
 	[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
 	[Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;   // How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
@@ -24,6 +25,8 @@ public class CharacterController2D : MonoBehaviour
 	[Space]
 
 	public UnityEvent OnLandEvent;
+
+	
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
