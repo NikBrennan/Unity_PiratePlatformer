@@ -7,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
     public CharacterController2D characterController;
     public int attackState;
+
+    public AudioSource swordSlash;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-			animator.SetBool("IsJumping", false);
+            swordSlash.Play();
+
+            animator.SetBool("IsJumping", false);
 			animator.SetBool("IsFalling", false);
 			animator.SetBool("IsAttacking", true);
             characterController.updateAttacking(true);

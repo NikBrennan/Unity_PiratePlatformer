@@ -1,8 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
-
+using System.Collections;
+using System.Collections.Generic;
 public class CharacterController2D : MonoBehaviour
 {
+	public AudioSource walkingSound;
+	public AudioSource JumpingSound;
+
+
 	[SerializeField] public int PlayerHealth = 100;
 	[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
 	[Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;   // How much to smooth out the movement
@@ -21,6 +26,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public bool _isAttacking = false;
 
+	
+
 	[Header("Events")]
 	[Space]
 
@@ -29,7 +36,9 @@ public class CharacterController2D : MonoBehaviour
 	
 
 	[System.Serializable]
-	public class BoolEvent : UnityEvent<bool> { }
+	public class BoolEvent : UnityEvent<bool> {
+		
+	}
 
 	private void Awake()
 	{
@@ -84,6 +93,7 @@ public class CharacterController2D : MonoBehaviour
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
+		
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
 			{
