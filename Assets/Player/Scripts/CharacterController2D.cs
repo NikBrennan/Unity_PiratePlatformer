@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	[SerializeField] public int PlayerHealth = 100;
 	[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
 	[Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;   // How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
@@ -18,10 +19,14 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	public bool _isAttacking = false;
+
 	[Header("Events")]
 	[Space]
 
 	public UnityEvent OnLandEvent;
+
+	
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
@@ -46,6 +51,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
+				Debug.Log("Grounded");
 				m_Grounded = true;
 				if (!wasGrounded)
 				{
@@ -53,8 +59,19 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 		}
+
+
 	}
 
+	public bool isAttacking()
+	{
+		return _isAttacking;
+	}
+
+	public void updateAttacking(bool state)
+	{
+		_isAttacking = state;
+	}
 
 	public void Move(float move, bool jump)
 	{
@@ -83,6 +100,7 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			Debug.Log("Jump");
 			// Add a vertical force to the player.
 			m_Grounded = true;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

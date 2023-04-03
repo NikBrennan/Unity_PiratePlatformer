@@ -11,12 +11,12 @@ TagManager:
   - Background
   - Water
   - UI
-  - Walls and Ground
+  - Middleground
   - 
   - 
   - 
   - Player
-  - 
+  - Foreground
   - 
   - 
   - 
@@ -53,9 +53,18 @@ TagManager:
   - name: Water
     uniqueID: 1690011373
     locked: 0
+  - name: Background
+    uniqueID: 889724741
+    locked: 0
   - name: Obstacles
     uniqueID: 1737164187
     locked: 0
+  - name: Middleground
+    uniqueID: 1911187145
+    locked: 0
   - name: Player
     uniqueID: 3314473315
+    locked: 0
+  - name: Foreground
+    uniqueID: 1178255533
     locked: 0
