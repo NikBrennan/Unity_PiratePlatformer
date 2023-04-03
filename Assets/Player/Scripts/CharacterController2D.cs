@@ -15,6 +15,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private LayerMask m_WhatIsGround;
 	// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_GroundCheck;
+	
 	// A position marking where to check for ceilings
 	[SerializeField] private Transform m_CeilingCheck;
 	// A mask determing what is a ship to the character
@@ -24,10 +25,13 @@ public class CharacterController2D : MonoBehaviour
 	const float k_GroundedRadius = .2f;
 	// Whether or not the player is grounded.
 	[SerializeField] private bool m_Grounded;
+
 	[SerializeField] private bool m_IsFalling;
+	public bool OnShip = false;
+
 	// Radius of the overlap circle to determine if the player can stand up
 	const float k_CeilingRadius = .2f;
-	private Rigidbody2D m_Rigidbody2D;
+	public Rigidbody2D m_Rigidbody2D;
 	// For determining which way the player is currently facing.
 	private bool m_FacingRight = true;
 	private Vector3 m_Velocity = Vector3.zero;
@@ -81,6 +85,7 @@ public class CharacterController2D : MonoBehaviour
 			{
 				Debug.Log("Grounded");
 				m_Grounded = true;
+				OnShip = true;
 
 				// If win condition is met, freeze player on ship
 				m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
