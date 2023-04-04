@@ -904,6 +904,7 @@ GameObject:
   - component: {fileID: 5358983014607314281}
   - component: {fileID: 3193404080382733310}
   - component: {fileID: 3904214876449766294}
+  - component: {fileID: 8917216854322932384}
   m_Layer: 6
   m_Name: SpikeTraps
   m_TagString: Untagged
@@ -1072,3 +1073,16 @@ CompositeCollider2D:
     m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!114 &8917216854322932384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253874893644197434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7640618950d9ec645ae970cff20f54f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
