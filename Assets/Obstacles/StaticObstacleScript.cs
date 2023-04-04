@@ -20,15 +20,17 @@ public class StaticObstacleScript : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		var collider = collision.gameObject;
-		if (collider.tag != "Sword")
+		var sword = collision.gameObject;
+		if (sword.tag != "Sword")
 			return;
 
-		hp--;
+		int swordDmg = sword.GetComponent<HitBoxAttack>()._attackPower; 
+		hp = hp - swordDmg;
 		Animator.SetTrigger(hp > 0 ? "hit" : "destroyed");
-
-		if (hp <= 0)
-			Destroy(gameObject);
 	}
 
+	void DestroyObject()
+	{
+		Destroy(gameObject);
+	}
 }
