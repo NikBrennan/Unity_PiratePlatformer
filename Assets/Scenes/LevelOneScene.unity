@@ -473,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1538622258, guid: cecddee0db748ce4ebfd7655f44916de, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 10.000001
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1538622258, guid: cecddee0db748ce4ebfd7655f44916de, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
@@ -12834,11 +12834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2609546128132073154, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.58
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 2609546128132073154, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.68
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 2609546128132073154, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12876,17 +12876,9 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2833634787551868118, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1911187145
-      objectReference: {fileID: 0}
     - target: {fileID: 7649157886477054764, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
       propertyPath: m_Name
       value: Barrel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7649157886477054764, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}

@@ -29,9 +29,8 @@ public class StaticObstacleScript : MonoBehaviour
 		Animator.SetTrigger(hp > 0 ? "hit" : "destroyed");
 	}
 
-	void DestroyCannon()
+	void DestroyObject()
 	{
 		Destroy(gameObject);
 	}
-
 }
