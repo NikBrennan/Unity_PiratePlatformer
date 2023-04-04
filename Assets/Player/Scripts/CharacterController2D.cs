@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -39,6 +40,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public bool _isAttacking = false;
 
+	private PlayerPersist playerPersist;
+
 	[Header("Events")]
 	[Space]
 
@@ -55,6 +58,7 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		playerPersist = GetComponent<PlayerPersist>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -93,8 +97,6 @@ public class CharacterController2D : MonoBehaviour
 
 				// If win condition is met, freeze player on ship
 				m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
-
-				//
 
 				if (!wasGrounded)
 				{
@@ -180,10 +182,12 @@ public class CharacterController2D : MonoBehaviour
 		if (transform.position.x >= 9.3)
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			gameObject.transform.position = new Vector3((gameObject.transform.position.x * -1) + 1, gameObject.transform.position.y, gameObject.transform.position.z);
 		}
 		else if (transform.position.x <= -9.3)
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+			gameObject.transform.position = new Vector3((gameObject.transform.position.x * -1) - 1, gameObject.transform.position.y, gameObject.transform.position.z);
 		}
 	}
 }
