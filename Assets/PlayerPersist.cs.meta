@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Obstacles/Cannon/Cannon Ball/CannonBallScript.cs.meta
+guid: dc1418c4c5593294790b701ec2c62b90
+========
 guid: e11b643b3fa6c6f4e8d6731f06b448bc
+>>>>>>>> main:Assets/PlayerPersist.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
