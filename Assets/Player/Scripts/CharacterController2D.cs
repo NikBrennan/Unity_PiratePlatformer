@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class CharacterController2D : MonoBehaviour
 {
+	public AudioSource walkingSound;
+	public AudioSource JumpingSound;
+
 	[SerializeField] public int PlayerHealth = 100;
 	[SerializeField] public float PlayerSpeed = 8f;
 	// Amount of force added when the player jumps.
