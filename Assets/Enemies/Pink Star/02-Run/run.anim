@@ -27,17 +27,17 @@ AnimationClip:
       value: {fileID: 21300000, guid: 9a50f1a8ddcfb61429a764ea695de930, type: 3}
     - time: 0.6
       value: {fileID: 21300000, guid: d8b2137e68b50c44ca930a3bc5688766, type: 3}
-    - time: 0.8
+    - time: 0.7
       value: {fileID: 21300000, guid: d6230a33eedb15e4db82b649dc951f82, type: 3}
-    - time: 1
+    - time: 0.9
       value: {fileID: 21300000, guid: 2533acda005ac1749a0f9ab2f88216fe, type: 3}
-    - time: 1.0833334
+    - time: 1
       value: {fileID: 21300000, guid: 99d49985b6d77ee40ae6edde29349c28, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
