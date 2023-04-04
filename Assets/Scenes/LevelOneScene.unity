@@ -9478,6 +9478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 1169955933213180320, guid: cecddee0db748ce4ebfd7655f44916de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7691388981655323083, guid: cecddee0db748ce4ebfd7655f44916de, type: 3}
       propertyPath: m_ChunkCullingBounds.y
       value: 0.027999938
@@ -12675,17 +12679,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 294696015507100002, guid: 2dc7080cd1013ea4a920f3cdf0e7a709, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4519945785621926538, guid: 2dc7080cd1013ea4a920f3cdf0e7a709, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4519945785621926538, guid: 2dc7080cd1013ea4a920f3cdf0e7a709, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4417562
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4519945785621926538, guid: 2dc7080cd1013ea4a920f3cdf0e7a709, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.6792965
+      value: -3.67
       objectReference: {fileID: 0}
     - target: {fileID: 4519945785621926538, guid: 2dc7080cd1013ea4a920f3cdf0e7a709, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12987,6 +12995,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 7649157886477054764, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
 --- !u!1 &1518769022
@@ -13122,6 +13134,10 @@ PrefabInstance:
     - target: {fileID: 1905190519719152521, guid: 3e923204be468494d8657ebc760e6dea, type: 3}
       propertyPath: m_Name
       value: Box Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905190519719152521, guid: 3e923204be468494d8657ebc760e6dea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8966769064215032751, guid: 3e923204be468494d8657ebc760e6dea, type: 3}
       propertyPath: m_RootOrder
@@ -13341,6 +13357,10 @@ PrefabInstance:
     - target: {fileID: 4950566878758604289, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950566878758604289, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4950566878758604303, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
       propertyPath: m_RootOrder
@@ -13565,6 +13585,10 @@ PrefabInstance:
     - target: {fileID: 3082351021063525087, guid: f2522e59fcddb9c458d3ff27a1627fa8, type: 3}
       propertyPath: m_Name
       value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082351021063525087, guid: f2522e59fcddb9c458d3ff27a1627fa8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2522e59fcddb9c458d3ff27a1627fa8, type: 3}
