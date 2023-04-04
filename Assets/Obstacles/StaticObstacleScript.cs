@@ -29,22 +29,21 @@ public class StaticObstacleScript : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        var objTag = collision.gameObject.tag;
-        if(objTag != "Player")
+        var collider = collision.collider;
+        if(collider.tag != "Player")
             return;
 
-        var player = collision.gameObject.GetComponentInParent<Animator>(); //Player animator
-        var isAttacking = player.GetBool("IsAttacking");
+        var player = collision.gameObject.GetComponentInParent<CharacterController2D>(); //Player animator
 
-        if(!isAttacking)
+        if(!player._isAttacking)
             return;
-
         hp--;
         Animator.SetTrigger(hp > 0 ? "hit" : "destroyed");
 
-        if(hp == 0)
-            Destroy(this);
+        if(hp <= 0)
+            Destroy(gameObject);
     }
+
 }

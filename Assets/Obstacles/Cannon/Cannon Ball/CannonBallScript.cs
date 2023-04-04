@@ -8,11 +8,13 @@ public class CannonBallScript : MonoBehaviour
     public Vector2 direction = Vector2.zero;
     public CircleCollider2D CircleCollider { get; set; }
     public Animator Animator { get; set; }
+    public  int damage;
 
     private void Awake()
     {
         CircleCollider = GetComponent<CircleCollider2D>();
         Animator = GetComponent<Animator>();
+        Animator.ResetTrigger("hit");
     }
     // Start is called before the first frame update
     void Start()
@@ -25,10 +27,21 @@ public class CannonBallScript : MonoBehaviour
         {
             //var player = collision.gameObject.GetComponent
             //kill/hit player
-            Animator.SetTrigger("hit");
-            Destroy(gameObject);
+        GetComponent<CircleCollider2D>().enabled = false;
+            var player = collision.gameObject.GetComponent<CharacterController2D>();
+            player.PlayerHealth -= damage;
+           
+            StartCoroutine(Explode());
+          
         }
      
+    }
+
+    IEnumerator Explode()
+    {
+        Animator.SetTrigger("hit");
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
