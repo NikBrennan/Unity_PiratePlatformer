@@ -70,3 +70,12 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# from https://gist.github.com/j-mai/4389f587a079cb9f9f07602e4444a6ed#3-configuring-git-to-use-unity-smart-merge-for-merging
+# to nicely merge and stuff
+[merge]
+tool = unityyamlmerge
+
+[mergetool "unityyamlmerge"]
+trustExitCode = false
+cmd = "D:\Apps\Unity Editor\2021.3.20f1\Editor\Data\Tools\UnityYAMLMerge.exe' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
