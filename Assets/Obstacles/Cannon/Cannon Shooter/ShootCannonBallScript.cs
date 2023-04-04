@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShootCannonBallScript : MonoBehaviour
 {
-    public int shotsPerSecond = 1;
+    public float shotsPerSecond = 1;
     public float speed = 1;
     public int damage = 100;
     public GameObject cannonBallPrefab;
@@ -24,7 +24,7 @@ public class ShootCannonBallScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Shoot();
     }
 
     // Update is called once per frame
@@ -42,13 +42,16 @@ public class ShootCannonBallScript : MonoBehaviour
     void Shoot()
     {
         Animator.SetTrigger("fire");
-
-        var cannonball = Instantiate(cannonBallPrefab, transform.position - new Vector3(0, .1f), Quaternion.identity);
-        var ballScript = cannonball.GetComponent<CannonBallScript>();
-        ballScript.speed = speed;
-        ballScript.direction = SpriteRenderer.flipX ? Vector2.right : Vector2.left;
-        ballScript.damage = damage;
-
-        cannonball.name = $"Cannon Ball - {_count++}";
     }
+
+    void ShootCannonBall()
+    {
+		var cannonball = Instantiate(cannonBallPrefab, transform.position - new Vector3(0.45f, .15f), Quaternion.identity);
+		var ballScript = cannonball.GetComponent<CannonBallScript>();
+		ballScript.speed = speed;
+		ballScript.direction = SpriteRenderer.flipX ? Vector2.right : Vector2.left;
+		ballScript.damage = damage;
+
+		cannonball.name = $"Cannon Ball - {_count++}";
+	}
 }

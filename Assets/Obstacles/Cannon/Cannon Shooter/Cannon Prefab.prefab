@@ -114,8 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfe1cbdfd7c8534881341d1573a4921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsPerSecond: 1
+  shotsPerSecond: 0.2
   speed: 1
+  damage: 100
   cannonBallPrefab: {fileID: 5922777052257753611, guid: d61b38688f09cde4ca48115116dc7b5b, type: 3}
   Animator: {fileID: 8844935228551440717}
 --- !u!95 &8844935228551440717
