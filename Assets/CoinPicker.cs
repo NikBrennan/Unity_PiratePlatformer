@@ -13,5 +13,10 @@ public class CoinPicker : MonoBehaviour
             coins++;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "Gem")
+        {
+            coins += 5;
+            Destroy(collision.gameObject);
+        }
     }
 }
