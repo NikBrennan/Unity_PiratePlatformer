@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
@@ -50,16 +51,20 @@ public class CharacterController2D : MonoBehaviour
 
 	public UnityEvent OnLandEvent;
 
-	
-
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> {
 		
 	}
 
+	private void Update()
+	{
+		ChangeScene();
+	}
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		playerPersist = GetComponent<PlayerPersist>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -98,8 +103,6 @@ public class CharacterController2D : MonoBehaviour
 
 				// If win condition is met, freeze player on ship
 				m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
-
-				//
 
 				if (!wasGrounded)
 				{
@@ -178,5 +181,20 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	private void ChangeScene()
+	{
+		
+		if (transform.position.x >= 9.3)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			gameObject.transform.position = new Vector3((gameObject.transform.position.x * -1) + 1, gameObject.transform.position.y, gameObject.transform.position.z);
+		}
+		else if (transform.position.x <= -9.3)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+			gameObject.transform.position = new Vector3((gameObject.transform.position.x * -1) - 1, gameObject.transform.position.y, gameObject.transform.position.z);
+		}
 	}
 }
