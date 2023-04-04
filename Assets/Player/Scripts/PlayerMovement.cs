@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Math.Abs(horizontalMove));
         if (Input.GetButtonDown("Jump"))
         {
-            isJumping = true;
+			Debug.Log("Jump");
+			isJumping = true;
             animator.SetBool("IsJumping", true);
 		}
-        if (characterController.isFalling())
+        if (characterController.isFalling() && !characterController.isAttacking())
         {
             Debug.Log("Falling");
             animator.SetBool("IsFalling", true);
