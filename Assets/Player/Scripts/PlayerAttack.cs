@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetButtonDown("Fire1"))
         {
             swordSlash.Play();
 
