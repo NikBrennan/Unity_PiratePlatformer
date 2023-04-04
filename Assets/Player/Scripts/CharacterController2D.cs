@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -43,10 +44,13 @@ public class CharacterController2D : MonoBehaviour
 
 	public UnityEvent OnLandEvent;
 
-	
-
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
+
+	private void Update()
+	{
+		ChangeScene();
+	}
 
 	private void Awake()
 	{
@@ -168,5 +172,18 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	private void ChangeScene()
+	{
+		
+		if (transform.position.x >= 9.3)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		}
+		else if (transform.position.x <= -9.3)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+		}
 	}
 }

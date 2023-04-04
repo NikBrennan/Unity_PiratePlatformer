@@ -34,10 +34,4 @@ public class ShipController : MonoBehaviour
             player.transform.SetParent(transform);
 		}
 	}
-
-    public void EndGame()
-    {
-        // Load the EndGame scene
-		SceneManager.LoadScene(0);
-	}
 }
