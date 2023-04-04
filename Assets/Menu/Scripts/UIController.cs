@@ -18,6 +18,7 @@ public class UIController : MonoBehaviour
     Resolution[] resolutions;
     Display[] displays;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +37,6 @@ public class UIController : MonoBehaviour
 
         settingsButtons = settingsButtonsTemplate.CloneTree();
         Button backButton = settingsButtons.Q<Button>("back-button");
-
-        //var dropdown = settingsButtons.Q<DropdownField>("resolution-drop");
-        //dropdown.RegisterValueChangedCallback(evt => Debug.Log(evt.newValue));
 
         List<string> options1 = new List<string>();
         int currentRes = 0;
@@ -61,12 +59,10 @@ public class UIController : MonoBehaviour
 
         var dropdown1 = new DropdownField("Resolution", options1, currentRes);
         dropdown1.RegisterValueChangedCallback(SetResolution);
-        //dropdown.RegisterValueChangedCallback(evt => Debug.Log(evt.newValue));
         settingsButtons.Add(dropdown1);
 
         var dropdown2 = new DropdownField("Display Devices", options2, 0);
         dropdown2.RegisterValueChangedCallback(SetDisplay);
-        //dropdown2.RegisterValueChangedCallback(evt => Debug.Log(evt.newValue));
         settingsButtons.Add(dropdown2);
 
         backButton.clicked += BackButtonPressed;
@@ -104,7 +100,7 @@ public class UIController : MonoBehaviour
     void PlayButtonPressed()
     {
         //Load the game scene
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("LevelOneScene");
     }
 
     void SettingsButtonPressed()

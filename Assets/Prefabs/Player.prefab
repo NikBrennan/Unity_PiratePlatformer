@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHealth: 100
+  PlayerSpeed: 8
   m_JumpForce: 600
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -330,8 +331,13 @@ MonoBehaviour:
     m_Bits: 64
   m_GroundCheck: {fileID: 4950566878413184117}
   m_CeilingCheck: {fileID: 4950566877935258715}
+  WhatIsShip:
+    serializedVersion: 2
+    m_Bits: 0
   m_Grounded: 0
   m_IsFalling: 0
+  OnShip: 0
+  m_Rigidbody2D: {fileID: 0}
   _isAttacking: 0
   OnLandEvent:
     m_PersistentCalls:

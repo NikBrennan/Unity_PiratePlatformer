@@ -1,5 +1,5 @@
 .button-style {
-    background-color: rgb(226, 149, 37);
+    background-color: rgb(222, 154, 107);
     color: rgb(0, 0, 0);
     -unity-font-style: bold;
     border-left-width: 0;
@@ -20,7 +20,7 @@
 }
 
 .button-style:hover {
-    background-color: rgb(255, 228, 189);
+    background-color: rgba(222, 154, 107, 0.69);
     color: rgb(0, 0, 0);
     -unity-font-style: bold;
     border-left-width: 0;
@@ -41,7 +41,7 @@
 }
 
 .button-style:active {
-    background-color: rgb(144, 93, 18);
+    background-color: rgba(222, 154, 107, 0.43);
     color: rgb(0, 0, 0);
     -unity-font-style: bold;
     border-left-width: 0;
