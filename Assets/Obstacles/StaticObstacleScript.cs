@@ -18,33 +18,19 @@ public class StaticObstacleScript : MonoBehaviour
         print($"Animator set: {Animator}");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		var sword = collision.gameObject;
+		if (sword.tag != "Sword")
+			return;
 
-    }
+		int swordDmg = sword.GetComponent<HitBoxAttack>()._attackPower; 
+		hp = hp - swordDmg;
+		Animator.SetTrigger(hp > 0 ? "hit" : "destroyed");
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var objTag = collision.gameObject.tag;
-        if(objTag != "Player")
-            return;
-
-        var player = collision.gameObject.GetComponentInParent<Animator>(); //Player animator
-        var isAttacking = player.GetBool("IsAttacking");
-
-        if(!isAttacking)
-            return;
-
-        hp--;
-        Animator.SetTrigger(hp > 0 ? "hit" : "destroyed");
-
-        if(hp == 0)
-            Destroy(this);
-    }
+	void DestroyObject()
+	{
+		Destroy(gameObject);
+	}
 }
