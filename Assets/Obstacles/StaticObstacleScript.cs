@@ -9,6 +9,11 @@ public class StaticObstacleScript : MonoBehaviour
 
     public BoxCollider2D boxCollider2D { get; set; }
 
+	public GameObject gem;
+    public GameObject gem2;
+    public GameObject gem3;
+    public GameObject gem4;
+
     public int hp = 10;
 	void Awake()
     {
@@ -30,6 +35,10 @@ public class StaticObstacleScript : MonoBehaviour
 
 	void DestroyObject()
 	{
+		Instantiate(gem, transform.position + new Vector3(0.2f, 0, 0), Quaternion.identity);
+        Instantiate(gem2, transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
+        Instantiate(gem3, transform.position + new Vector3(-0.2f, 0, 0), Quaternion.identity);
+        Instantiate(gem4, transform.position + new Vector3(0, -0.2f, 0), Quaternion.identity);
 		Destroy(gameObject);
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinPicker : MonoBehaviour
 {
-    private float coins = 0;
+    public float coins = 0;
     public AudioSource coinSound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
