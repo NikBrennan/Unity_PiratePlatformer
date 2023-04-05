@@ -44,8 +44,11 @@ public class UIController : MonoBehaviour
         int currentRes = 0;
         for(int i = 0; i < resolutions.Length; i++)
         {
-            options1.Add(resolutions[i].width + " x " + resolutions[i].height);
-            if(resolutions[i].width == Screen.currentResolution.width && 
+            if(resolutions[i].width % 16 == 0 && resolutions[i].height % 9 == 0)
+            {
+                options1.Add(resolutions[i].width + " x " + resolutions[i].height);
+            }
+            if (resolutions[i].width == Screen.currentResolution.width && 
                 resolutions[i].height == Screen.currentResolution.height)
             {
                 currentRes = i;
