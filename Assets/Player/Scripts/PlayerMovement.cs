@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     float horizontalMove = 0;
     float runSpeed = 40;
-    public bool isJumping = false;
+    bool isJumping = false;
     public AudioSource walkingSound;
     public AudioSource JumpingSound;
     // Start is called before the first frame update
