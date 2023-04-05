@@ -16,13 +16,11 @@ public class SpikeScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
         var collider = collision.collider;
         if(collider.tag != "Player")
             return;
-        spikeSound.Play();
         var player = collision.gameObject.GetComponent<CharacterController2D>();
         player.PlayerHealth -= damage;
-        
+        spikeSound.Play();
     }
 }
