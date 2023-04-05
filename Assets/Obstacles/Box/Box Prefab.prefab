@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  dmgSound: {fileID: 4967740247264021145}
 --- !u!61 &6207063752836023352
 BoxCollider2D:
   m_ObjectHideFlags: 0
