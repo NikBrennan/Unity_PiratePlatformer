@@ -10,6 +10,7 @@ public class ShootCannonBallScript : MonoBehaviour
     public int damage = 100;
     public GameObject cannonBallPrefab;
     public Animator Animator;
+    public AudioSource cannonFire;
     SpriteRenderer SpriteRenderer { get; set; }
     private float ElapsedTime = 0;
 
@@ -41,6 +42,7 @@ public class ShootCannonBallScript : MonoBehaviour
 
     void Shoot()
     {
+        cannonFire.Play();
         Animator.SetTrigger("fire");
     }
 

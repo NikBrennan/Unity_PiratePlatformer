@@ -6,6 +6,8 @@ public class SpikeScript : MonoBehaviour
 {
     public int damage = 100;
     BoxCollider2D BoxCollider2D { get; set; }
+    public AudioSource spikeSound;
+
 
     private void Awake()
     {
@@ -19,5 +21,6 @@ public class SpikeScript : MonoBehaviour
             return;
         var player = collision.gameObject.GetComponent<CharacterController2D>();
         player.PlayerHealth -= damage;
+        spikeSound.Play();
     }
 }
