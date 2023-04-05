@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPersist : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerPersist : MonoBehaviour
 		if (Input.GetAxisRaw("Horizontal") != 0)
 		{
 			print("asd");
-		} 
+		}
+		if (SceneManager.GetActiveScene().name == "MenuScene")
+		{
+			Destroy(gameObject);
+		}
 	}
 }
