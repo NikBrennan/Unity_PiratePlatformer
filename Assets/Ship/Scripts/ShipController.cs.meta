@@ -3,11 +3,7 @@ guid: f43949ee8a056dd4f87ead82bf2926e2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - player: {instanceID: 0}
-  - sailController: {instanceID: 0}
-  - animator: {instanceID: 0}
-  - sailAnimator: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
