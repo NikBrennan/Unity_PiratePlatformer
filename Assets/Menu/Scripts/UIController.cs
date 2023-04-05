@@ -62,7 +62,7 @@ public class UIController : MonoBehaviour
         }
 
 
-        var dropdown1 = new DropdownField("Resolution", options1, currentRes);
+        var dropdown1 = new DropdownField("Resolution", options1, options1.Count - 1);
         dropdown1.RegisterValueChangedCallback(SetResolution);
         settingsButtons.Add(dropdown1);
 
