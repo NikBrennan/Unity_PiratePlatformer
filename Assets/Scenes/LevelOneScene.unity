@@ -14004,18 +14004,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1650973155}
     m_Modifications:
-    - target: {fileID: 2833634787551868118, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7649157886477054764, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
-      propertyPath: m_Name
-      value: Barrel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7649157886477054764, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1410524473286431372, guid: 768030417964c3044874c9a670764d10, type: 3}
       propertyPath: m_Name
       value: Coin (2)
@@ -14063,6 +14051,18 @@ PrefabInstance:
     - target: {fileID: 7713305634768944727, guid: 768030417964c3044874c9a670764d10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833634787551868118, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649157886477054764, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
+      propertyPath: m_Name
+      value: Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649157886477054764, guid: d7d198b3622583a4aafa07cf32df7059, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768030417964c3044874c9a670764d10, type: 3}
@@ -15211,10 +15211,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Sword
       objectReference: {fileID: 0}
-    - target: {fileID: 4950566878413184117, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.43
-      objectReference: {fileID: 0}
     - target: {fileID: 4950566878758604289, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15227,10 +15223,6 @@ PrefabInstance:
       propertyPath: walkingSound
       value: 
       objectReference: {fileID: 571231500}
-    - target: {fileID: 4950566878758604299, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
-      propertyPath: JumpForce
-      value: 600
-      objectReference: {fileID: 0}
     - target: {fileID: 4950566878758604303, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
       propertyPath: m_RootOrder
       value: 4
