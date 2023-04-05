@@ -95,11 +95,15 @@ public class EnemyBehavior : MonoBehaviour
             {
 				attack.Play();
 				animator.Play("attack");
-				GameObject player = collision.gameObject;
-				player.GetComponent<CharacterController2D>().getHit(attackPower);
 			}
         }
     }
+
+    void HitPlayer()
+    {
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		player.GetComponent<CharacterController2D>().getHit(attackPower);
+	}
 
     private void Unstun()
     {
