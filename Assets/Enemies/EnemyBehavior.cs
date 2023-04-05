@@ -21,10 +21,10 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
         moveDirection = new Vector2(xDirection, rb.velocity.y);
-        animator = GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
         animator.SetBool("isRunning", true);
         currentSpeed = maxSpeed;
     }
@@ -38,31 +38,30 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        // if enemy has no ground in front of them, or obstacle, they will change movement direction
         if (!hasGround() || seeObstacle())
         {
-            xDirection *= -1;
-            //transform.Rotate(0, 180, 0);
-            //currentSpeed = 0;            
-            //animator.SetBool("isRunning", false);
-            //StartCoroutine(Turn());
-
+            //moveDirection.x *= -1;
+            transform.Rotate(0, 180, 0);
         }
-        moveDirection.x = xDirection;
+
         rb.velocity = moveDirection * currentSpeed;
     }
 
+    //function to track if enemy has ground to walk
     private bool hasGround()
     {
         RaycastHit2D hasGround = Physics2D.Raycast(boxCollider.bounds.center, Vector2.down, 1f, whatIsGround);
         return hasGround.collider != null;
     }
+    //function to track if enemy is near obstacle
     private bool seeObstacle()
     {
-        RaycastHit2D path = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, moveDirection, 0.1f, whatIsObstacle);
+        RaycastHit2D path = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, whatIsObstacle);
         return path.collider != null;
     }
 
+    //Here enemy receives a hit from player's sword
     public void getHit(int damage)
     {
         health -= damage;
@@ -72,14 +71,14 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            animator.Play("die");
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
 
         //more logic, work in progress
 
     }
 
+    // in this function enemy will attack player if they collide
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -87,25 +86,25 @@ public class EnemyBehavior : MonoBehaviour
             animator.Play("attack");
             GameObject player = collision.gameObject;
             player.GetComponent<CharacterController2D>().getHit(attackPower);
-
-
-            //attack sound can ho here
         }
+    }
+
+
+    // process to destroy enemy on death
+    IEnumerator Die()
+    {
+        attackPower = 0; //make shure dead one can't hit player
+        animator.Play("die");
+        currentSpeed = 0;
+        yield return new WaitForSeconds(1f);
+
+        Destroy(gameObject);
     }
 
     IEnumerator Turn()
     {
-        // animator.SetBool("isRunning", false);
-        // currentSpeed = 0;
-
-        Debug.Log("coroutine started");
-        yield return new WaitForSeconds(1);
-
-        // currentSpeed = maxSpeed;
-        // animator.SetBool("isRunning", true);
-        //currentSpeed = maxSpeed;
-        // Debug.Log(currentSpeed + " current");
-        // Debug.Log(maxSpeed + " max");
-        // animator.SetBool("isRunning", true);
+        currentSpeed = 0.5f;
+        yield return new WaitForSeconds(1f);
+        currentSpeed = maxSpeed;
     }
 }
