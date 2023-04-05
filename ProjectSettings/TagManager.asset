@@ -7,8 +7,6 @@ TagManager:
   - Sword
   - Coin
   - Enemy
-  - Gem
-  - TotalScore
   layers:
   - Default
   - TransparentFX
