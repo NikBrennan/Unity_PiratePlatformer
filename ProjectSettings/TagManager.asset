@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sword
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Middleground
   - Ship
   - 
-  - 
+  - Enemies
   - Player
   - Foreground
   - 
@@ -63,6 +64,9 @@ TagManager:
     locked: 0
   - name: Middleground
     uniqueID: 1911187145
+    locked: 0
+  - name: Enemies
+    uniqueID: 2082716123
     locked: 0
   - name: Player
     uniqueID: 3314473315

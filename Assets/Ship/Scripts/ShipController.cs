@@ -13,8 +13,8 @@ public class ShipController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         characterController = player.GetComponent<CharacterController2D>();
+        
     }
 
     // Update is called once per frame
