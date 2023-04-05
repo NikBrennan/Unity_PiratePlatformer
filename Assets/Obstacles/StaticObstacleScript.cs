@@ -10,7 +10,6 @@ public class StaticObstacleScript : MonoBehaviour
     public BoxCollider2D boxCollider2D { get; set; }
 
     public int hp = 10;
-	public AudioSource dmgSound;
 	void Awake()
     {
         Animator = GetComponent<Animator>();
@@ -23,7 +22,6 @@ public class StaticObstacleScript : MonoBehaviour
 		var sword = collision.gameObject;
 		if (sword.tag != "Sword")
 			return;
-		dmgSound.Play();
 
 		int swordDmg = sword.GetComponent<HitBoxAttack>()._attackPower; 
 		hp = hp - swordDmg;
