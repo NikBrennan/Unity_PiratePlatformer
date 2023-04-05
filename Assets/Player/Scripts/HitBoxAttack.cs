@@ -14,6 +14,7 @@ public class HitBoxAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //if we hit enemy, call function to deal damage
         if (collision.tag == "Enemy")
         {
             GameObject enemy = collision.gameObject;

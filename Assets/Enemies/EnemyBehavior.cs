@@ -41,8 +41,7 @@ public class EnemyBehavior : MonoBehaviour
         // if enemy has no ground in front of them, or obstacle, they will change movement direction
         if (!hasGround() || seeObstacle())
         {
-            //moveDirection.x *= -1;
-            transform.Rotate(0, 180, 0);
+            moveDirection.x *= -1;
         }
 
         rb.velocity = moveDirection * currentSpeed;

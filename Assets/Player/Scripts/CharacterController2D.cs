@@ -196,5 +196,7 @@ public class CharacterController2D : MonoBehaviour
     {
         PlayerHealth -= damage;
         //play animation, sound, and other effects
+        //example can be found in enemies/EnemyBehavior.cs
+        // remove this comment when done
     }
 }
