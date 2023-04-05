@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
     public UIDocument mainDoc;
+    public Label titleLabel;
     public Button playButton;
     public Button settingsButton;
     public Button quitButton;
@@ -26,6 +27,7 @@ public class UIController : MonoBehaviour
         displays = Display.displays;
 
         var doc = GetComponent<UIDocument>().rootVisualElement;
+        titleLabel = doc.Q<Label>("title-label");
         playButton = doc.Q<Button>("play-button");
         settingsButton = doc.Q<Button>("settings-button");
         quitButton = doc.Q<Button>("quit-button");
@@ -112,6 +114,7 @@ public class UIController : MonoBehaviour
     void BackButtonPressed()
     {
         buttonsBox.Clear();
+        buttonsBox.Add(titleLabel);
         buttonsBox.Add(playButton);
         buttonsBox.Add(settingsButton);
         buttonsBox.Add(quitButton);
