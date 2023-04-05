@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping = false;
     public AudioSource walkingSound;
     public AudioSource JumpingSound;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +23,14 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("Speed", Math.Abs(horizontalMove));
-        if(horizontalMove > 0 && horizontalMove != null)
+
+        if (horizontalMove > 0 && horizontalMove != null)
             walkingSound.Play();
+
         if (Input.GetButtonDown("Jump"))
         {
             JumpingSound.Play();
-			Debug.Log("Jump");
+            Debug.Log("Jump");
 			isJumping = true;
             animator.SetBool("IsJumping", true);
 		}

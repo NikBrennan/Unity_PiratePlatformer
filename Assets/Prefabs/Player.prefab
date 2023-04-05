@@ -136,7 +136,7 @@ CapsuleCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -190,9 +190,10 @@ GameObject:
   - component: {fileID: 4950566878758604297}
   - component: {fileID: 4950566878758604296}
   - component: {fileID: 4950566878758604404}
+  - component: {fileID: -4456787470829047080}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 4950566878758604289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.22, y: -3.29, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4950566877935258715}
@@ -322,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHealth: 100
+  PlayerSpeed: 8
   m_JumpForce: 600
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -330,8 +332,13 @@ MonoBehaviour:
     m_Bits: 64
   m_GroundCheck: {fileID: 4950566878413184117}
   m_CeilingCheck: {fileID: 4950566877935258715}
+  WhatIsShip:
+    serializedVersion: 2
+    m_Bits: 0
   m_Grounded: 0
   m_IsFalling: 0
+  OnShip: 0
+  m_Rigidbody2D: {fileID: 0}
   _isAttacking: 0
   OnLandEvent:
     m_PersistentCalls:
@@ -419,3 +426,15 @@ MonoBehaviour:
   animator: {fileID: 4950566878758604300}
   characterController: {fileID: 4950566878758604299}
   attackState: 1
+--- !u!114 &-4456787470829047080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950566878758604289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1418c4c5593294790b701ec2c62b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
