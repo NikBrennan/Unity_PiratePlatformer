@@ -1,6 +1,6 @@
 .button-style {
     background-color: rgb(222, 154, 107);
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.69);
     -unity-font-style: bold;
     border-left-width: 0;
     border-right-width: 0;
@@ -11,52 +11,23 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 98px;
-    height: 34px;
+    height: 45px;
     font-size: 20px;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    background-image: url('project://database/Assets/Treasure%20Hunters/Wood%20and%20Paper%20UI/Sprites/Green%20Button/1.png?fileID=2800000&guid=397a4a2d28270fa46b5970d7514e8942&type=3#1');
+    -unity-text-align: upper-center;
+    -unity-text-outline-width: 0;
 }
 
 .button-style:hover {
-    background-color: rgba(222, 154, 107, 0.69);
-    color: rgb(0, 0, 0);
-    -unity-font-style: bold;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 98px;
-    height: 34px;
-    font-size: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.86);
 }
 
 .button-style:active {
-    background-color: rgba(222, 154, 107, 0.43);
     color: rgb(0, 0, 0);
-    -unity-font-style: bold;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 98px;
-    height: 34px;
-    font-size: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
