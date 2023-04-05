@@ -10,8 +10,7 @@ public class StaticObstacleScript : MonoBehaviour
     public BoxCollider2D boxCollider2D { get; set; }
 
     public int hp = 10;
-
-    void Awake()
+	void Awake()
     {
         Animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CannonBallScript : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed;
     public Vector2 direction = Vector2.zero;
     public CircleCollider2D CircleCollider { get; set; }
     public Animator Animator { get; set; }
     public  int damage;
-
+    public AudioSource cannonFire;
     private void Awake()
     {
         CircleCollider = GetComponent<CircleCollider2D>();
@@ -39,6 +39,7 @@ public class CannonBallScript : MonoBehaviour
 
     IEnumerator Explode()
     {
+        cannonFire.Play();
         Animator.SetTrigger("hit");
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
@@ -47,6 +48,6 @@ public class CannonBallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * 5f * Time.deltaTime);
     }
 }
