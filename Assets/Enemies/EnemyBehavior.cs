@@ -23,6 +23,8 @@ public class EnemyBehavior : MonoBehaviour
     public AudioSource lurk;
     public AudioSource hurt;
 
+    private bool isStunned = false;
+
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -36,7 +38,7 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        animator.SetBool("isStunned", false);
     }
 
     // Update is called once per frame
@@ -67,6 +69,8 @@ public class EnemyBehavior : MonoBehaviour
     //Here enemy receives a hit from player's sword
     public void getHit(int damage)
     {
+        isStunned = true;
+        animator.SetBool("isStunned", true);
         health -= damage;
         hurt.Play();
         if (health > 0)
@@ -87,11 +91,19 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            attack.Play();
-            animator.Play("attack");
-            GameObject player = collision.gameObject;
-            player.GetComponent<CharacterController2D>().getHit(attackPower);
+            if(!isStunned)
+            {
+				attack.Play();
+				animator.Play("attack");
+				GameObject player = collision.gameObject;
+				player.GetComponent<CharacterController2D>().getHit(attackPower);
+			}
         }
+    }
+
+    private void Unstun()
+    {
+        isStunned = false;
     }
 
 
