@@ -191,4 +191,9 @@ public class CharacterController2D : MonoBehaviour
             gameObject.transform.position = new Vector3((gameObject.transform.position.x * -1) - 1, gameObject.transform.position.y, gameObject.transform.position.z);
         }
     }
+
+    public void getHit(int damage)
+    {
+        PlayerHealth -= damage;
+    }
 }

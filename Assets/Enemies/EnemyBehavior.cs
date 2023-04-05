@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinkStarBehaviorController : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
     //mask to determine ground
+    [SerializeField] private int attackPower = 35;
     [SerializeField] private int health = 150;
     [SerializeField] private float speed;
     [SerializeField] private LayerMask whatIsGround;
@@ -15,12 +16,14 @@ public class PinkStarBehaviorController : MonoBehaviour
 
     private int xDirection = -1;
     Vector2 moveDirection;
+    private Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         moveDirection = new Vector2(xDirection, rb.velocity.y);
+        animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -51,4 +54,34 @@ public class PinkStarBehaviorController : MonoBehaviour
         RaycastHit2D path = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, moveDirection, 0.1f, whatIsObstacle);
         return path.collider != null;
     }
+
+    public void getHit(int damage)
+    {
+        health -= damage;
+        if (health > 0)
+        {
+            animator.Play("hit");
+        }
+        else
+        {
+            animator.Play("die");
+            Destroy(gameObject);
+        }
+
+        //more logic, work in progress
+
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            animator.Play("attack");
+            GameObject player = collision.gameObject;
+            player.GetComponent<CharacterController2D>().getHit(attackPower);
+
+        }
+    }
+
+
 }
