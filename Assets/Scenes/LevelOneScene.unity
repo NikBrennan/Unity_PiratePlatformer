@@ -15598,7 +15598,8 @@ PrefabInstance:
       propertyPath: swordSlash
       value: 
       objectReference: {fileID: 571231499}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8219707328928549915, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e7d68ab33b3fa894bbd3dad5cc65904f, type: 3}
 --- !u!4 &1863517807 stripped
 Transform:

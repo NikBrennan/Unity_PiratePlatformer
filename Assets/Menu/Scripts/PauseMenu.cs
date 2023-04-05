@@ -33,12 +33,14 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        CoinPicker.coins = 0;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MenuScene");
     }
 
     public void QuitGame()
     {
+        CoinPicker.coins = 0;
         Debug.Log("Quitting Game...");
         Application.Quit();
     }
