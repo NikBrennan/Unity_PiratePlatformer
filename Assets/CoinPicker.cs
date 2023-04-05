@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CoinPicker : MonoBehaviour
 {
-    public float coins = 0;
+    public static float coins = 0;
     public AudioSource coinSound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        coinSound.Play();
+        //coinSound.Play();
         if (collision.gameObject.tag == "Coin")
         {
             coins++;
