@@ -7,14 +7,15 @@ public class EnemyBehavior : MonoBehaviour
     //mask to determine ground
     [SerializeField] private int attackPower = 35;
     [SerializeField] private int health = 150;
-    [SerializeField] private float speed;
+    [SerializeField] private float maxSpeed;
+    private float currentSpeed;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private LayerMask whatIsObstacle;
     private BoxCollider2D boxCollider;
 
     public Rigidbody2D rb;
 
-    private int xDirection = -1;
+    private int xDirection = 1;
     Vector2 moveDirection;
     private Animator animator;
 
@@ -24,6 +25,8 @@ public class EnemyBehavior : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         moveDirection = new Vector2(xDirection, rb.velocity.y);
         animator = GetComponent<Animator>();
+        animator.SetBool("isRunning", true);
+        currentSpeed = maxSpeed;
     }
 
     // Start is called before the first frame update
@@ -39,9 +42,14 @@ public class EnemyBehavior : MonoBehaviour
         if (!hasGround() || seeObstacle())
         {
             xDirection *= -1;
+            //transform.Rotate(0, 180, 0);
+            //currentSpeed = 0;            
+            //animator.SetBool("isRunning", false);
+            //StartCoroutine(Turn());
+
         }
         moveDirection.x = xDirection;
-        rb.velocity = moveDirection * speed;
+        rb.velocity = moveDirection * currentSpeed;
     }
 
     private bool hasGround()
@@ -72,7 +80,7 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -80,8 +88,24 @@ public class EnemyBehavior : MonoBehaviour
             GameObject player = collision.gameObject;
             player.GetComponent<CharacterController2D>().getHit(attackPower);
 
+
+            //attack sound can ho here
         }
     }
 
+    IEnumerator Turn()
+    {
+        // animator.SetBool("isRunning", false);
+        // currentSpeed = 0;
 
+        Debug.Log("coroutine started");
+        yield return new WaitForSeconds(1);
+
+        // currentSpeed = maxSpeed;
+        // animator.SetBool("isRunning", true);
+        //currentSpeed = maxSpeed;
+        // Debug.Log(currentSpeed + " current");
+        // Debug.Log(maxSpeed + " max");
+        // animator.SetBool("isRunning", true);
+    }
 }

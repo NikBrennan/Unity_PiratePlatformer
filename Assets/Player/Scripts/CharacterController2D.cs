@@ -195,5 +195,6 @@ public class CharacterController2D : MonoBehaviour
     public void getHit(int damage)
     {
         PlayerHealth -= damage;
+        //play animation, sound, and other effects
     }
 }
