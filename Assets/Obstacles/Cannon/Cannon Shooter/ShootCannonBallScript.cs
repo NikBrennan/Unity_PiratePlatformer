@@ -15,6 +15,7 @@ public class ShootCannonBallScript : MonoBehaviour
     private float ElapsedTime = 0;
 
     private int _count = 0;
+    public bool dying = false;
 
     private void Awake()
     {
@@ -42,18 +43,26 @@ public class ShootCannonBallScript : MonoBehaviour
 
     void Shoot()
     {
-        cannonFire.Play();
-        Animator.SetTrigger("fire");
+        if (!dying)
+        {
+			cannonFire.Play();
+			Animator.SetTrigger("fire");
+		}
     }
 
     void ShootCannonBall()
     {
+        Animator.Play("Idle");
 		var cannonball = Instantiate(cannonBallPrefab, transform.position - new Vector3(0.45f, .15f), Quaternion.identity);
 		var ballScript = cannonball.GetComponent<CannonBallScript>();
 		ballScript.speed = speed;
 		ballScript.direction = SpriteRenderer.flipX ? Vector2.right : Vector2.left;
 		ballScript.damage = damage;
-
 		cannonball.name = $"Cannon Ball - {_count++}";
 	}
+
+    void setDying()
+    {
+        dying = true;
+    }
 }
