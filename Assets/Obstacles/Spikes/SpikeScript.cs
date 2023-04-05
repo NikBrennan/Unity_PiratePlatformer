@@ -21,6 +21,8 @@ public class SpikeScript : MonoBehaviour
             return;
         var player = collision.gameObject.GetComponent<CharacterController2D>();
         player.PlayerHealth -= damage;
-        spikeSound.Play();
+        //Spike does not exist after player dies
+        //Cannot play sound
+        //spikeSound.Play();
     }
 }

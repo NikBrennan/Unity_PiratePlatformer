@@ -193,6 +193,10 @@ public class CharacterController2D : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             gameObject.transform.position = new Vector3((gameObject.transform.position.x * -1) - 1, gameObject.transform.position.y, gameObject.transform.position.z);
         }
+        else if (PlayerHealth <= 0)
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
     }
 
     public void getHit(int damage)
