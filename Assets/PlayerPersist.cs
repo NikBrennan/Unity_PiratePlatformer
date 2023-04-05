@@ -24,7 +24,8 @@ public class PlayerPersist : MonoBehaviour
 		{
 			print("asd");
 		}
-		if (SceneManager.GetActiveScene().name == "MenuScene")
+		if (SceneManager.GetActiveScene().name == "MenuScene" ||
+			SceneManager.GetActiveScene().name == "GameOverScene")
 		{
 			Destroy(gameObject);
 		}
