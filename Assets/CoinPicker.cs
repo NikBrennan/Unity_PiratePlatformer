@@ -8,7 +8,7 @@ public class CoinPicker : MonoBehaviour
     public AudioSource coinSound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //coinSound.Play();
+        coinSound.Play();
         if (collision.gameObject.tag == "Coin")
         {
             coins++;

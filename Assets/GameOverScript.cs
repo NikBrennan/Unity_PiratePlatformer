@@ -12,7 +12,6 @@ public class GameOverScript : MonoBehaviour
 
     private void Start()
     {
-        score = score / 2;
         totalScore.text += score.ToString();
     }
 
