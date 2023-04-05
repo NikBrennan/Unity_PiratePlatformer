@@ -322,25 +322,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7af12b8fa6d470409d42e369b1d5714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSound: {fileID: 0}
-  JumpingSound: {fileID: 0}
   PlayerHealth: 100
   PlayerSpeed: 8
-  JumpForce: 600
-  MovementSmoothing: 0.05
-  AirControl: 1
-  WhatIsGround:
+  m_JumpForce: 600
+  m_MovementSmoothing: 0.05
+  m_AirControl: 1
+  m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  m_GroundCheck: {fileID: 4950566878413184117}
+  m_CeilingCheck: {fileID: 4950566877935258715}
   WhatIsShip:
     serializedVersion: 2
-    m_Bits: 128
-  GroundCheck: {fileID: 4950566878413184117}
-  CeilingCheck: {fileID: 4950566877935258715}
-  Grounded: 0
-  IsFalling: 0
+    m_Bits: 0
+  m_Grounded: 0
+  m_IsFalling: 0
   OnShip: 0
-  Rigidbody2D: {fileID: 4950566878758604301}
+  m_Rigidbody2D: {fileID: 0}
   _isAttacking: 0
   OnLandEvent:
     m_PersistentCalls:
@@ -413,9 +411,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 4950566878758604299}
   animator: {fileID: 4950566878758604300}
-  isJumping: 0
-  walkingSound: {fileID: 0}
-  JumpingSound: {fileID: 0}
 --- !u!114 &4950566878758604404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +426,6 @@ MonoBehaviour:
   animator: {fileID: 4950566878758604300}
   characterController: {fileID: 4950566878758604299}
   attackState: 1
-  swordSlash: {fileID: 0}
 --- !u!114 &-4456787470829047080
 MonoBehaviour:
   m_ObjectHideFlags: 0
